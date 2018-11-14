@@ -1,4 +1,4 @@
-package config;
+package com.luoc.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;

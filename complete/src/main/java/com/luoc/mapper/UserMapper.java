@@ -1,7 +1,11 @@
-package mapper;
+package com.luoc.mapper;
 
-import domain.User;
+import com.luoc.domain.User;
+import org.apache.ibatis.annotations.Flush;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author luoc
@@ -11,6 +15,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
     /**
+     *  查询用户
      * @param id 用户id
      * @return 返回用户
      */
