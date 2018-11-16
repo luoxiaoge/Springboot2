@@ -1,13 +1,18 @@
 package com.luoc.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * @author luoc
  * @date 2018/11/13 0013
  * @time 9:46
  *
  */
+@Document(collection = "user")
 public class User {
 
+    @Id
     private  Integer id;
 
     private  String userId;
@@ -16,7 +21,7 @@ public class User {
 
     private  String userName;
 
-    public User(Integer id, String userId, String passWord, String userName) {
+    public User(Integer id, String userId,String userName, String passWord) {
         this.id = id;
         this.userId = userId;
         this.passWord = passWord;

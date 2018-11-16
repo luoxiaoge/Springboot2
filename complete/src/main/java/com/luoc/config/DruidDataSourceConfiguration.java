@@ -38,7 +38,6 @@ public class DruidDataSourceConfiguration {
         // 可配的属性 都在 StatViewServlet 和其父类下
         initparams.put("loginUsername","admin-druid");
         initparams.put("loginPassword","123456");
-
         servletRegistrationBean.setInitParameters(initparams);
         return  servletRegistrationBean;
     }
@@ -47,7 +46,7 @@ public class DruidDataSourceConfiguration {
     public FilterRegistrationBean druidWebStatFilter(){
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
 
-        Map<String,String> initParams = new HashMap<>();
+        Map<String,String> initParams = new HashMap<>(1);
 
         initParams.put("exclusions","*.js,*.css,/druid/*");
         filterRegistrationBean.setInitParameters(initParams);

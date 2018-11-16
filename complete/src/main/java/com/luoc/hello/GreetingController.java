@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 
 import com.alibaba.fastjson.JSON;
+import com.luoc.domain.User;
 import com.luoc.mapper.UserMapper;
 import com.luoc.mongDb.UserRepository;
 import org.slf4j.Logger;
@@ -36,7 +37,7 @@ public class GreetingController {
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         log.info("该用户信息:{}",mapper.findUserById(3));
-        //userRepository.save(new User("123","root"));
+        userRepository.save(new User(1223,"123","root","root"));
 
        // System.out.println(userRepository.findByUserNameLike("root"));
         return new Greeting(counter.incrementAndGet(),

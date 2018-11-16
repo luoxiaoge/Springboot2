@@ -18,7 +18,7 @@ public interface UserRepository extends MongoRepository<User, Long> {
      * @param userName
      * @return
      */
-  User findByUserNameLike(String userName);
+   User findByUserNameLike(String userName);
 
 
 
