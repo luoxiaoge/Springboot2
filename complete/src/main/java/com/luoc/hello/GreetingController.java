@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 
 import com.alibaba.fastjson.JSON;
+import com.luoc.annotation.Auth;
 import com.luoc.domain.User;
 import com.luoc.mapper.UserMapper;
 import com.luoc.mongDb.UserRepository;
@@ -35,11 +36,12 @@ public class GreetingController {
     private UserRepository userRepository;
 
     @RequestMapping("/greeting")
+    @Auth(auth = true)
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         log.info("该用户信息:{}",mapper.findUserById(3));
         userRepository.save(new User(1223,"123","root","root"));
 
-       // System.out.println(userRepository.findByUserNameLike("root"));
+       //System.out.println(userRepository.findByUserNameLike("root"));
         return new Greeting(counter.incrementAndGet(),
                  String.format(template, name));
     }
