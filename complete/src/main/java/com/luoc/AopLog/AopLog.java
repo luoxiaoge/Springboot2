@@ -1,6 +1,7 @@
 package com.luoc.AopLog;
 
 import com.luoc.annotation.Auth;
+import com.luoc.exception.luoException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
@@ -37,6 +38,8 @@ public class AopLog {
           boolean isAuth = auth.auth();
           if(isAuth == true){
               logger.info("该用户是否登录:{}",method.getName());
+          }else {
+               throw  new luoException("该用户未登录");
           }
       }
 
