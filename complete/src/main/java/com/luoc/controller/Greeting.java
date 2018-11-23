@@ -1,4 +1,4 @@
-package com.luoc.hello;
+package com.luoc.controller;
 
 public class Greeting {
 

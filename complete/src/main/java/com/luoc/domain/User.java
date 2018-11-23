@@ -3,6 +3,8 @@ package com.luoc.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 /**
  * @author luoc
  * @date 2018/11/13 0013
@@ -21,11 +23,21 @@ public class User {
 
     private  String userName;
 
+    private Date   date;
+
     public User(Integer id, String userId,String userName, String passWord) {
         this.id = id;
         this.userId = userId;
         this.passWord = passWord;
         this.userName = userName;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public User() {

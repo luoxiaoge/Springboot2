@@ -20,4 +20,11 @@ public interface UserMapper {
      * @return 返回用户
      */
     User findUserById(Integer id);
+
+    /**
+     *  添加用户
+     * @param user 用户
+     * @return
+     */
+    //int insertUser(User user);
 }

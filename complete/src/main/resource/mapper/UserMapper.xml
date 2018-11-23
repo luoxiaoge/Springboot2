@@ -9,7 +9,20 @@
     </resultMap>
 
     <select id = "findUserById" resultMap = "result">
-        SELECT * FROM t_user where id = #{id};
+        SELECT *  from t_user where
+        <choose>
+            <when test="id = 3">
+                id = #{id}
+            </when>
+            <otherwise>
+                id = 1
+            </otherwise>
+        </choose>
+
     </select>
+
+  <!--  <insert id="insertUser" parameterType="com.luoc.domain.User">
+        insert
+    </insert>-->
 </mapper>
 

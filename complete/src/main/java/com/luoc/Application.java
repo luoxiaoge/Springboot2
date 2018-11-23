@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Administrator
  */
 @SpringBootApplication(scanBasePackages = {"com.luoc"})
-@MapperScan("com.luoc.mapper")
+@MapperScan({"com.luoc.mapper","com.luoc.shiro.domain.mapper"})
 public class Application {
 
     public static void main(String[] args) {

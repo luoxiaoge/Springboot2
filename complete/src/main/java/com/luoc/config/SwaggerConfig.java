@@ -1,3 +1,4 @@
+/*
 package com.luoc.config;
 
 import org.springframework.context.annotation.Bean;
@@ -11,11 +12,13 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+*/
 /**
  * @author luoc
  * @date 2018/11/20 0020
  * @Time 11:35
- */
+ *//*
+
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -42,3 +45,4 @@ public class SwaggerConfig {
 
 
 }
+*/
