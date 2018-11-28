@@ -89,7 +89,7 @@ public class LambdaStudy {
     }
 
     public  static  void eval(List<Integer> list,Predicate<Integer> predicate){
-        list.stream().filter(predicate).forEach(System.out::println);
+        list.parallelStream().filter(predicate).forEach(System.out::println);
 
     }
 
