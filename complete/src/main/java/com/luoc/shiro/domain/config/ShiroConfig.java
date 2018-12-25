@@ -78,7 +78,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/favicon.ico", "anon");
          // authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问
         //authc 表示过其他接口都需要过滤 value 是过滤器的名字 也可以自定义过滤器
-        filterChainDefinitionMap.put("/**", "authc");
+      /*  filterChainDefinitionMap.put("/**", "authc");*/
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;

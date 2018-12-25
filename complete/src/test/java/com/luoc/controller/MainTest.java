@@ -73,23 +73,9 @@ public class MainTest {
 
     }
 
-   /*   static class father{
-        @Override
-        public String toString() {
-            return "luoc";
-        }
+    @Override
+    public String toString() {
+
+        return super.toString();
     }
-
-
-      static class  son extends father{
-        public String  getName(){
-            return  toString();
-        }*/
-
-        /* public String  getName2(){
-               son.toString();
-               return "aaa";
-         }*/
-
-   // }
 }

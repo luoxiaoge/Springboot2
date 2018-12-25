@@ -3,7 +3,9 @@ package com.luoc.AopLog;
 import com.luoc.annotation.Auth;
 import com.luoc.exception.ServiceException;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -41,6 +43,16 @@ public class AopLog {
           }else {
                throw  new ServiceException("该用户未登录");
           }
+      }
+
+    @Around("aopPoint()")
+      public  Object Around(ProceedingJoinPoint jp) throws Throwable {
+           Long begintime = System.currentTimeMillis();
+           //执行方法
+           Object result = jp.proceed();
+           Long endTime = System.currentTimeMillis() - begintime;
+           System.out.println(endTime);
+           return result;
       }
 
 

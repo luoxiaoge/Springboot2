@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework</groupId>
     <artifactId>gs-rest-service</artifactId>
-    <packaging>pom</packaging>
     <version>0.1.0</version>
+    <packaging>pom</packaging>
     <modules>
         <module>mySwagger</module>
     </modules>
@@ -75,16 +75,6 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.7.0</version>
         </dependency>
-       <!-- <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.8.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.8.0</version>
-        </dependency>-->
 
         <!-- pagehelper -->
         <dependency>
@@ -99,11 +89,11 @@
             <version>2.0.2</version>
         </dependency>
         <!-- Optional, for bootstrap -->
-        <dependency>
+<!--        <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>3.3.7</version>
-        </dependency>
+        </dependency>-->
         <!-- jsp -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -135,6 +125,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.4</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -143,39 +139,37 @@
 
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.20.1</version>
-            <configuration>
-                <!-- 不指定单元测试 -->
-                <skipTests>true</skipTests>
-            </configuration>
-            </plugin>
-        </plugins>
         <resources>
              <resource>
                  <directory>src/main/resources</directory>
-                <!-- <directory>src/main/webapp</directory>-->
              </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.luoc.Application</mainClass>
+                            <!-- 指定Springboot程序启动类 -->
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <!-- 指定依赖的jar包相对于本程序jar的位置 -->
+                        </manifest>
+                        <manifestEntries>
+                            <Class-Path>./</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                    <!-- <excludes>
+                        <exclude>application*.yml</exclude>
+                        指定打包时要排除的文件,支持正则
+                    </excludes> -->
+                </configuration>
+            </plugin>
+        </plugins>
+
     </build>
 
-    <repositories>
-        <repository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </pluginRepository>
-    </pluginRepositories>
+
 </project>
