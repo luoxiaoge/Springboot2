@@ -7,8 +7,10 @@
     <artifactId>gs-rest-service</artifactId>
     <version>0.1.0</version>
     <packaging>pom</packaging>
+
     <modules>
         <module>mySwagger</module>
+        <module>boot</module>
     </modules>
 
 
@@ -88,12 +90,6 @@
             <artifactId>mapper-spring-boot-starter</artifactId>
             <version>2.0.2</version>
         </dependency>
-        <!-- Optional, for bootstrap -->
-<!--        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>3.3.7</version>
-        </dependency>-->
         <!-- jsp -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -141,7 +137,7 @@
     <build>
         <resources>
              <resource>
-                 <directory>src/main/resources</directory>
+                 <directory>boot/src/main/resources</directory>
              </resource>
         </resources>
         <plugins>

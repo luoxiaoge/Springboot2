@@ -76,7 +76,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/captcha.jpg", "anon");
         filterChainDefinitionMap.put("/favicon.ico", "anon");
-         // authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问
+         // 比如anon拦截器表示匿名访问（即不需要登录即可访问）；authc拦截器表示需要身份认证通过后才能访问
         //authc 表示过其他接口都需要过滤 value 是过滤器的名字 也可以自定义过滤器
       /*  filterChainDefinitionMap.put("/**", "authc");*/
 
