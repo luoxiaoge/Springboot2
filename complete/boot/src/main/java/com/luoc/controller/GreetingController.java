@@ -32,11 +32,11 @@ public class GreetingController {
     @Autowired
     private UserMapper mapper;
 
-    @Autowired
+/*    @Autowired
     private MongoTemplate mongoTemplate;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository userRepository;*/
 
     @GetMapping("/greeting")
    /* @Auth(auth = true)
